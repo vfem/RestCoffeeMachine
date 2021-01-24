@@ -8,6 +8,7 @@ import ru.test.model.CoffeeMachineService;
 import ru.test.model.CoffeeTask;
 import ru.test.repo.CoffeeTaskResponse;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Logger;
 
@@ -36,5 +37,16 @@ public class CoffeeRestController {
 	public CompletableFuture<CoffeeTaskResponse> addTask(@RequestBody CoffeeTask task) {
 		log.info(Thread.currentThread().getName());
 		return CompletableFuture.completedFuture(coffeeService.addCoffeeTask(task));
+	}
+
+	@RequestMapping(value = "/getAllHistory", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<CoffeeTaskResponse> getAllHistory() {
+		return coffeeService.getAllHistory();
+	}
+
+	@RequestMapping(value = "/clearAllHistory", method = RequestMethod.DELETE, produces = MediaType.TEXT_PLAIN_VALUE)
+	public String clearAllHistory() {
+		return coffeeService.clearAllHistory();
 	}
 }

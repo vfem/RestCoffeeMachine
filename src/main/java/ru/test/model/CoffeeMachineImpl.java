@@ -142,4 +142,13 @@ public class CoffeeMachineImpl implements CoffeeMachine {
 			response.setErrorText("Machine turned off");
 		}
 	}
+
+
+	public boolean isStarted() {
+		return isStarted;
+	}
+
+	public void setStarted(boolean started) {
+		isStarted = started;
+	}
 }

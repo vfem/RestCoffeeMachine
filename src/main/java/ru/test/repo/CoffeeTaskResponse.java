@@ -25,7 +25,7 @@ public class CoffeeTaskResponse {
 			(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss.SSS")
 	private Date finishTime;
 
-	private boolean isSuccessful;
+	private Boolean isSuccessful;
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private String errorText;
@@ -71,7 +71,7 @@ public class CoffeeTaskResponse {
 		this.finishTime = finishTime;
 	}
 
-	public boolean isSuccessful() {
+	public Boolean isSuccessful() {
 		return isSuccessful;
 	}
 
