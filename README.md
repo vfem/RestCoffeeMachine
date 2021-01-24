@@ -1,0 +1,2 @@
+# RestCoffeeMachine
+Simple rest service.
